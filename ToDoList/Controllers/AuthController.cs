@@ -37,7 +37,7 @@ namespace ToDoList.Controllers
         [AllowAnonymous]
         [HttpPost("login", Name = "Login")]
         [SwaggerOperation(Summary = "Authenticates user")]
-        [SwaggerResponse(StatusCodes.Status200OK, Description = "returns user Id and sends token to user's mail after successful authentication", Type = typeof(AuthenticationResponse))]
+        [SwaggerResponse(StatusCodes.Status200OK, Description = "returns user Id", Type = typeof(AuthenticationResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, Description = "Invalid username or password", Type = typeof(ErrorResponse))]
         [SwaggerResponse(StatusCodes.Status500InternalServerError, Description = "It's not you, it's us", Type = typeof(ErrorResponse))]
         public async Task<ActionResult<AuthenticationResponse>> Login(LoginRequest request)
